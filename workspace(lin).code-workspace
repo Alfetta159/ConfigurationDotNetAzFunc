@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "ClassLibrary"
+		},
+		{
+			"path": "ConsoleApp"
+		},
+		{
+			"path": "Functions"
+		}
+	],
+	"settings": {
+		"debug.internalConsoleOptions": "neverOpen"
+	}
+}
