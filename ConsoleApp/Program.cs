@@ -14,12 +14,17 @@ using IHost host = Host
             .AddScoped((sp) =>
             {
                 var configuration = sp.GetService<IConfiguration>();
-                return new Class1(null);
+                return new Class1(configuration);
             })
             .AddClassLibrary(sp =>
             {
                 var configuration = sp.GetService<IConfiguration>();
-                return new Class1(configuration!.GetSection(""));
+                return new Class2(configuration!.GetSection("SecondSection"));
+            })
+            .AddClassLibrary(sp =>
+            {
+                var configuration = sp.GetService<IConfiguration>();
+                return new Class3(configuration!.GetSection("SecondSection"));
             });
     })
     .Build();
