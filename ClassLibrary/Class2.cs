@@ -7,10 +7,10 @@ public class Class2
     readonly string One;
     readonly string Two;
 
-    public Class2(IConfigurationSection configurationSection)
+    public Class2(IConfiguration configuration)
     {
-        One = configurationSection["First"];
-        Two = configurationSection["Second"];
+        One = configuration["First"];
+        Two = configuration["Second"];
 
         Console.WriteLine("Class2 was instantiated.");
     }

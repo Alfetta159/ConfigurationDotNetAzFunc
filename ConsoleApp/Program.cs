@@ -11,21 +11,26 @@ using IHost host = Host
     .ConfigureServices((hostContext, services) =>
     {
         services
-            .AddScoped((sp) =>
-            {
-                var configuration = sp.GetService<IConfiguration>();
-                return new Class1(configuration);
-            })
-            .AddClassLibrary(sp =>
-            {
-                var configuration = sp.GetService<IConfiguration>();
-                return new Class2(configuration!.GetSection("SecondSection"));
-            })
-            .AddClassLibrary(sp =>
-            {
-                var configuration = sp.GetService<IConfiguration>();
-                return new Class3(configuration!.GetSection("SecondSection"));
-            });
+            // Uncomment only the following line to add the class library with the 'Default' configuration:
+            .AddClassLibrary();
+
+            // Uncomment only the following line to add the class library with the named configuration:
+            //.AddClassLibrary("SecondSection");
+
+            // Uncomment only the following two lines to add only two classes from the class library:
+            // .AddScoped<Class1>()
+            // .AddScoped<Class3>()
+
+            // Uncomment only the following command to add only the second class configured with the named configuration:
+            // .AddScoped(sp =>
+            // {
+            //     var configuration = sp.GetService<IConfiguration>();
+            //     return new Class2(configuration!.GetSection("SecondSection"));
+            // })
+
+            // Uncomment only the following line to configure using the command-line arguments in the launch.json:
+            //.AddClassLibraryFromCommandline()
+            ;
     })
     .Build();
 

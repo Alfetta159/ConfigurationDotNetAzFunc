@@ -6,9 +6,9 @@ public class Class1
 {
     readonly string One;
 
-    public Class1(IConfigurationSection configurationSection)
+    public Class1(IConfiguration configuration)
     {
-        One = configurationSection["First"];
+        One = configuration["First"];
 
         Console.WriteLine("Class1 was instantiated.");
     }

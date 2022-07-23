@@ -8,14 +8,14 @@ public class Class3
     readonly string Two;
     readonly string Three;
 
-    public Class3(IConfigurationSection configurationSection)
+    public Class3(IConfiguration configuration)
     {
-        One = configurationSection["First"];
-        Two = configurationSection["Second"];
-        Three = configurationSection["Third"];
+        One = configuration["First"];
+        Two = configuration["Second"];
+        Three = configuration["Third"];
 
-        Console.WriteLine("Class2 was instantiated.");
+        Console.WriteLine("Class3 was instantiated.");
     }
 
-    public void Run() { Console.WriteLine($"Class2 was run: {One}, {Two}, {Three}"); }
+    public void Run() { Console.WriteLine($"Class3 was run: {One}, {Two}, {Three}"); }
 }
